@@ -65,7 +65,9 @@ namespace AlgoritmoLinhaDeMontagem
             ///Não sabe? Passe o mouse em cima! :D
             var path = AlgoritmoDinamico(fList[0], fList[1]).ToList();
 
+            WriteLine("**************Algoritmo Linha de Montagem**************\n");
             //Imprime a saída detalhada
+            WriteLine("Saída Detalhada:");
             path.Select((e, i) =>
                 new
                 {
@@ -75,7 +77,7 @@ namespace AlgoritmoLinhaDeMontagem
                 }
             ).ToList().ForEach(e => WriteLine($"Linha: {e.Linha}, Estação: {e.Estacao}, Tempo: {e.Tempo}"));
 
-            WriteLine();
+            WriteLine("\nSaída Comparativa:");
 
             //Imprime a saída comparativa
             foreach (var f in fList)
@@ -85,7 +87,10 @@ namespace AlgoritmoLinhaDeMontagem
             }
 
 
-            ReadKey();
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                ReadKey(); 
+            }
         }
 
         #region Algoritmo
